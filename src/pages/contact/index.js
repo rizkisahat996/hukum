@@ -1,9 +1,35 @@
 import Layout from "@/components/layout";
 import TemplatePages from "@/components/templatepages";
 
+const handleSubmit = async (event) => {
+    event.preventDefault();
+  
+    const formData = new FormData(event.target);
+  
+    try {
+      const response = await axios.post('https://hukum.belajarduit.com/api/cases', formData);
+  
+      toast.success('Kasus telah di submit. Silahkan tunggu notifikasi di Whatsapp anda');
+  
+      // Reset the form or perform any other actions as needed
+      event.target.reset();
+      
+      // Optionally, you can add a delay before refreshing the page
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000); // Refresh after 3 seconds (adjust as needed)
+    } catch (error) {
+      console.error('Error sending data:', error);
+  
+      // Show an error notification
+      toast.error('Error sending data');
+    }
+  };
+
 export default function Contact() {
     return (
         <Layout pageTitle="Contact">
+        <ToastContainer />
             <TemplatePages>
                 <div className="row">
                     <div className="col-lg-6 col-12">
@@ -12,7 +38,7 @@ export default function Contact() {
                             <h3 className="fw-bold display-5">Contact Us</h3>
                             <hr />
                         </center>
-                        <form className="form mb-3">
+                        <form className="form mb-3" onSubmit={handleSubmit}>
                             <div className="form-body">
                                 <div className="row">
                                     <div className="col-md-6">
@@ -52,7 +78,7 @@ export default function Contact() {
                             </div>
 
                             <div className="form-actions text-center">
-                                <button type="button" className="btn gradient-deep-orange-orange rounded-pill text-white">
+                                <button type="submit" className="btn gradient-deep-orange-orange rounded-pill text-white">
                                     Appointment
                                 </button>
                             </div>
