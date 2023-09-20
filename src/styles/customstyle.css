@@ -1,0 +1,182 @@
+.media {
+    display: flex;
+    align-items: flex-start;
+}
+
+.media-body {
+    flex: 1;
+}
+
+.media-list.media-bordered .media {
+    border-top: 1px solid #E4E7ED;
+    padding: 1rem 0;
+}
+
+.media-list.media-bordered .media:first-child {
+    border-top: 0;
+}
+
+.media img {
+    margin-right: 1rem !important;
+}
+
+.media .media-body+a img {
+    margin-right: 0 !important;
+    margin-left: 1rem;
+}
+
+.media .media-body.text-right+a img {
+    margin-left: 0;
+}
+
+.media .media-body,
+.media .media-left,
+.media .media-right {
+    padding-top: 0;
+}
+
+.media .round-media {
+    border-radius: 50%;
+}
+
+.align-self-center {
+    align-self: center !important;
+}
+
+.gradient-deep-orange-orange {
+    background: linear-gradient(45deg, #bf360c, #f57c00) !important;
+    opacity: 1 !important;
+    background-repeat: repeat-x !important;
+}
+
+.btn.gradient-deep-orange-orange:active,
+.fc button.gradient-deep-orange-orange:active,
+.btn.gradient-deep-orange-orange.active,
+.fc button.gradient-deep-orange-orange.active {
+    background-image: linear-gradient(45deg, #bf360c, #f57c00) !important;
+    background-repeat: repeat-x !important;
+}
+
+.display-1 {
+    font-size: 6rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.display-2 {
+    font-size: 5.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.display-3 {
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.display-4 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.card {
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card .card-img.overlap {
+    margin-top: -40px;
+}
+
+.card.card-inverse .card-blockquote .blockquote-footer,
+.card.card-inverse .card-link,
+.card.card-inverse .card-subtitle,
+.card.card-inverse .card-text,
+.card.card-inverse .card-title,
+.card.card-inverse .card-footer,
+.card.card-inverse a,
+.card.card-inverse a:hover,
+.card.card-inverse label,
+.card.card-inverse span,
+.card.card-inverse .form-group:hover,
+.card.card-inverse div,
+.card.card-inverse input {
+    color: #fff;
+}
+
+.card.card-inverse .form-group.is-focused .checkbox label,
+.card.card-inverse .form-group.is-focused label.checkbox-inline,
+.card.card-inverse .form-group.is-focused .radio label,
+.card.card-inverse .form-group.is-focused label.radio-inline {
+    color: #fff;
+}
+
+.card.card-inverse hr {
+    border-color: #fff;
+}
+
+.card.card-inverse .checkbox label {
+    color: #fff;
+}
+
+.card.card-inverse .checkbox label .checkbox-decorator .check {
+    border-color: rgba(255, 255, 255, 0.54);
+}
+
+.card.card-inverse input::-webkit-input-placeholder,
+.card.card-inverse input::-moz-placeholder,
+.card.card-inverse input:-ms-input-placeholder,
+.card.card-inverse input:-moz-placeholder {
+    color: #fff;
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1.25rem;
+}
+
+.img-xl {
+    width: 80px !important;
+    height: 80px !important;
+}
+
+.overlay-black {
+    background: #000000;
+    /* The Fallback */
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.text-custom {
+    background-image: linear-gradient(45deg, #bf360c, #f57c00) !important;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent !important;
+}
+
+@keyframes navbarColorChangeAnimation {
+    0% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: #333;
+    }
+}
+
+.navbar {
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    animation: navbarColorChangeAnimation 0.3s ease;
+}
+
+.border-custom {
+    border-color: linear-gradient(45deg, #bf360c, #f57c00) !important;
+}
