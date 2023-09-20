@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export async function getServerSideProps() {
   try {
     // HTTP request
-    const req = await axios.get('http://127.0.0.1:8000/api/laws');
+    const req = await axios.get('https://hukum.belajarduit.com/api/laws');
     const res = req.data.data;
 
     if (res) {
@@ -55,7 +55,7 @@ export default function Home(props) {
     const formData = new FormData(event.target);
   
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/cases', formData);
+      const response = await axios.post('https://hukum.belajarduit.com/api/cases', formData);
   
       toast.success('Kasus telah di submit. Silahkan tunggu notifikasi di Whatsapp anda');
   
@@ -688,7 +688,7 @@ export default function Home(props) {
                 <div className="col-4" key={index}>
                   <div className="profile-card-4 bg-white h-100 mb-3">
                   <img
-                      src={item.image ? `http://127.0.0.1:8000/storage/${item.image}` : `https://source.unsplash.com/1280x720?${item.category.name}`}
+                      src={item.image ? `https://hukum.belajarduit.com/storage/${item.image}` : `https://source.unsplash.com/1280x720?${item.category.name}`}
                       className="img-4"
                     />    
                     <div className="profile-content">
@@ -718,7 +718,7 @@ export default function Home(props) {
                 <SplideSlide key={index}>
                   <div className="profile-card-4 bg-white h-100">
                   <img
-                      src={item.image ? `http://127.0.0.1:8000/storage/${item.image}` : `https://source.unsplash.com/1280x720?${item.category.name}`}
+                      src={item.image ? `https://hukum.belajarduit.com/storage/${item.image}` : `https://source.unsplash.com/1280x720?${item.category.name}`}
                       className="img-4"
                     />  
                     <div className="profile-content">
