@@ -173,15 +173,17 @@ export default function Home(props) {
   const carouselImages = [
     {
       source: "/images/slide-background2.jpg",
-      caption_first: "Firma Hukum Terpercaya dan Terbaik",
-      caption_second: "Kami Berjuang Untuk Keadilan Anda",
-      button_text: "Daftarkan Kasus Anda",
+      caption_first: "Untuk Anda Klien Kami",
+      caption_second: "Layanan Konsultasi",
+      caption_third: "Hubungi kami di 000000000 atau silahkan isi form berikut ini",
+      caption_fourth: "Kami akan menghubungi Anda secepatnya untuk membantu Anda menyelesaikan masalah Anda dengan cepat dan efisien. Kami siap membantu Anda. ",
     },
     {
-      source: "/images/slide-background.jpg",
-      caption_first: "Trusted and Best Law Firm",
-      caption_second: "We Fight For Your Justice",
-      button_text: "Register Your Case",
+      source: "/images/slide-background2.jpg",
+      caption_first: "For Our Client",
+      caption_second: "Consultation Service",
+      caption_third: "Contact us at 000000000 or fill in the form",
+      caption_fourth: "We will contact you as soon as possible to ensure that your cases are handled quickly and efficiently. We are ready to help. ",
     }
   ];
 
@@ -197,15 +199,69 @@ export default function Home(props) {
           {carouselImages.map((image, index) => (
             <SplideSlide key={index}>
               <img src={image.source} style={{ objectFit: "cover", height: "100%", width: "100%" }} />
-              <div className="splide-overlay px-5">
-                <div className='splide-overlay-content' data-aos="fade-up">
-                  <h5 className='fw-bold'>{image.caption_first}</h5>
-                  <h2 className='display-4 fw-bold'>{image.caption_second}</h2>
-                  <button type="button" className='btn btn-raised gradient-deep-orange-orange text-white btn-lg rounded-pill mt-2' data-bs-toggle="modal" data-bs-target="#formModal">
-                    <i className="fas fa-calendar-check me-2"></i> {image.button_text}
-                  </button>
+            <div className="splide-overlay px-5 py-5 justify-content-center">
+              <div className="container splide-overlay-content">
+            <div className="row mt-lg-3">
+              <div className="col-lg-5 col-12">
+                <div className="py-2 splide-overlay-content">
+                  <h5 className="text-custom fw-bolder">{image.caption_first}</h5>
+                  <h1 className="fw-bold text-white">{image.caption_second}</h1>
+                  <h5 className="text-custom fw-bolder">{image.caption_third}</h5>
+                  <h6 className="fw-bolder text-white">
+                  {image.caption_fourth} 
+                  </h6>
                 </div>
               </div>
+              <div className="col-lg-7 col-12">
+                <form className="form splide-overlay-content" onSubmit={handleSubmit}>
+                  <div className="form-body">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="form-group">
+                          <input type="text" id="name" className="form-control mb-3" name="name" placeholder="Nama Anda" />
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="form-group">
+                          <input type="email" id="email" className="form-control mb-3" name="email" placeholder="Email Anda" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="form-group">
+                          <input type="text" id="phone" className="form-control mb-3" name="phone" placeholder="Nomor Telepon" />
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="form-group mb-3">
+                          <select id="service" name="service" className="form-control">
+                            <option defaultValue="none" disabled="">Jenis Perkara</option>
+                            <option value="design">Pidana</option>
+                            <option value="development">Perdata</option>
+                            <option value="illustration">Kepalitan</option>
+                            <option value="branding">Korupsi</option>
+                            <option value="video">HAM</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="form-group mb-3">
+                      <textarea id="case" rows="5" className="form-control" name="case" placeholder="Penjelasan mengenai kasus Anda"></textarea>
+                    </div>
+                  </div>
+
+                  <div className="form-actions text-center">
+                  <button type="submit" className="btn gradient-deep-orange-orange rounded-pill text-white" style={{ width: "12rem" }}>
+                    <i className="fa fa-paper-plane"></i> Kirim
+                  </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          </div>
             </SplideSlide>
           ))}
         </Splide>
@@ -215,15 +271,69 @@ export default function Home(props) {
           {carouselImages.map((image, index) => (
             <SplideSlide key={index}>
               <img src={image.source} style={{ objectFit: "cover", height: "100%", width: "100%" }} />
-              <div className="splide-overlay px-5">
-                <div className='splide-overlay-content-small' data-aos="fade-up">
-                  <h6 className='fw-bold text-custom'>{image.caption_first}</h6>
-                  <h4 className='display-6 fw-bold'>{image.caption_second}</h4>
-                  <button type="button" className='btn btn-raised gradient-deep-orange-orange text-white btn-lg rounded-pill' data-bs-toggle="modal" data-bs-target="#formModal">
-                    <i className="fas fa-calendar-check me-2"></i> {image.button_text}
-                  </button>
+              <div className="splide-overlay">
+              <div className="container pt-5">
+            <div className="row mt-lg-3">
+              <div className="col-lg-5 col-12">
+                <div className="py-2 splide-overlay-content">
+                  <h5 className="text-custom fw-bolder">Untuk Anda Klien Kami</h5>
+                  <h1 className="fw-bold text-white">Layanan Konsultasi</h1>
+                  <h5 className="text-custom fw-bolder">Hubungi kami di 000000000 atau silahkan isi form berikut ini</h5>
+                  <h6 className="fw-bolder text-white">
+                    Kami akan menghubungi Anda secepatnya untuk membantu Anda menyelesaikan masalah Anda dengan cepat dan efisien. Kami siap membantu Anda. 
+                  </h6>
                 </div>
               </div>
+              <div className="col-lg-7 col-12">
+                <form className="form splide-overlay-content" onSubmit={handleSubmit}>
+                  <div className="form-body">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="form-group">
+                          <input type="text" id="name" className="form-control mb-3" name="name" placeholder="Nama Anda" />
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="form-group">
+                          <input type="email" id="email" className="form-control mb-3" name="email" placeholder="Email Anda" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="form-group">
+                          <input type="text" id="phone" className="form-control mb-3" name="phone" placeholder="Nomor Telepon" />
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="form-group mb-3">
+                          <select id="service" name="service" className="form-control">
+                            <option defaultValue="none" disabled="">Jenis Perkara</option>
+                            <option value="design">Pidana</option>
+                            <option value="development">Perdata</option>
+                            <option value="illustration">Kepalitan</option>
+                            <option value="branding">Korupsi</option>
+                            <option value="video">HAM</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="form-group mb-3">
+                      <textarea id="case" rows="5" className="form-control" name="case" placeholder="Penjelasan mengenai kasus Anda"></textarea>
+                    </div>
+                  </div>
+
+                  <div className="form-actions text-center">
+                  <button type="submit" className="btn gradient-deep-orange-orange rounded-pill text-white" style={{ width: "12rem" }}>
+                    <i className="fa fa-paper-plane"></i> Kirim
+                  </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          </div>
             </SplideSlide>
           ))}
         </Splide>
